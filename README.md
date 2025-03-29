@@ -3,20 +3,26 @@ Half adder circuit done with qubits and CNOT and Toffoli quantum logic gates.
 Necessary to pip install qiskit and qiskit_aer. Recommend using a virtual environment
 
 ## General Half Adder
-A regular half adder consists of an input A and an input B. These can either be 0 or 1, representing the respective values of 0 and 1 in binary. The reason it is called a "half-adder" is because it only accounts for the carry out, there is no consideration for any "carry-in". The sum bit(bit 0), is computed with A XOR B. The carry bit(bit 1), the greater bit, is computed with A AND B, so that 1+1 = 2, or 1 0, with the 1 being the carry, and 0 being the sum.
+
+A regular half adder takes two inputs, A and B, which can each be 0 or 1 (binary values). It's called a *half* adder because it only accounts for a carry-out. There's no carry-in like you'd have in a full adder.
+
+The **sum bit** (bit 0) is calculated using A XOR B.
+
+The **carry bit** (bit 1) is calculated using A AND B — this captures the situation where 1 + 1 = 2, which is binary **10**: the 1 is the carry, and the 0 is the sum.
 
 More details can be found here
 
 https://www.geeksforgeeks.org/half-adder-in-digital-logic/
 
 ## Quantum Half Adder
-Instead of using a general half adder, this program uses a quantum half adder, with python's qiskit library. First, instead of representing the inputs as binary numbers, it represents them as qubits, |0> and |1>, respectively. On a conceptual level, it is necessary to understand that these are represented by vectors 1 0 and 0 1 respectively. First, a circuit must be created with the following line
+Instead of using a general half adder, this program uses a quantum half adder, with python's **qiskit** library. First, instead of representing the inputs as binary numbers, it represents them as **qubits**, |0> and |1>, respectively. On a conceptual level, it is necessary to understand that these are represented by vectors 1 0 and 0 1 respectively. First, a circuit must be created with the following line
 
 `circuit = QuantumCircuit(3, 2)`
 
 This creates a circuit with 3 qubits and 2 classic bits. Qubits 0 and 1 are the inputs, while 2 holds the carry bit. 2 will be used to hold the sum bit, as this will make the processing into regular bits/results much easier. The two qubit inputs can be customized however you would like, by changing the two lines shown below in the code.
 
 `circuit.h(0)
+
 circuit.x(1)`
 
 The above input is a hadamard 0. This places the 0 in superposition. Due to the nature of the hadamard matrix, as shown below, the 1 0 vector becomes a sqrt(2)/2 sqrt(2)/2 vector, or half 1, half 0, in probability. This is simply for demonstration purposes, and can be customized to have two hadamard inputs of opposing types h(0) and h(1), or regular qubits x(0) and x(1).
