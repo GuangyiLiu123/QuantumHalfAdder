@@ -21,9 +21,9 @@ Instead of using a general half adder, this program uses a quantum half adder, w
 
 This creates a circuit with 3 qubits and 2 classic bits. Qubits 0 and 1 are the inputs, while 2 holds the carry bit. 2 will be used to hold the sum bit, as this will make the processing into regular bits/results much easier. The two qubit inputs can be customized however you would like, by changing the two lines shown below in the code.
 
-`circuit.h(0)
+`circuit.h(0)`
 
-circuit.x(1)`
+`circuit.x(1)`
 
 The above input is a hadamard 0. This places the 0 in superposition. Due to the nature of the hadamard matrix, as shown below, the 1 0 vector becomes a sqrt(2)/2 sqrt(2)/2 vector, or half 1, half 0, in probability. This is simply for demonstration purposes, and can be customized to have two hadamard inputs of opposing types h(0) and h(1), or regular qubits x(0) and x(1).
 
