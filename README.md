@@ -25,6 +25,6 @@ This creates a circuit with 3 qubits and 2 classic bits. Qubits 0 and 1 are the 
 
 `circuit.x(1)`
 
-The above input is a hadamard 0. This places the 0 in superposition. Due to the nature of the hadamard matrix, as shown below, the 1 0 vector becomes a sqrt(2)/2 sqrt(2)/2 vector, or half 1, half 0, in probability. This is simply for demonstration purposes, and can be customized to have two hadamard inputs of opposing types h(0) and h(1), or regular qubits x(0) and x(1).
+The above input puts qubit 0 into a hadamard(superposition) state. Due to the nature of the hadamard matrix, as shown below, the 1 0 vector becomes a sqrt(2)/2 sqrt(2)/2 vector, or half 1, half 0, in probability. By default, the qubits are initialized as |0> in qiskit. X is the quantum not gate, which flips |0> to 1, vice versa. If you wanted qubit 0 to be the superposition of a |1>, you must first circuit.x(0), then circuit.h(0).
 
 The half adder then uses a toffoli gate to compute the carry and place it into qubit 2, and then a CX/CNOT/quantum XOR into qubit 1, as the sum. To explain it simply, both of these gates require taking tensor products of the qubits, Qubits 0 and 1 for the CNOT, Qubits 0, 1, and 2 for toffoli/CCNOT. The toffoli is an 8*8 matrix, while the CNOT is a 4*4. The rest of the program is predicated on running a simulator rather than simply accepting the mathematical probabilities, comparing these, and creating a visual display for the circuit. The code for the in text visual display was created with the help of GPT 4o
