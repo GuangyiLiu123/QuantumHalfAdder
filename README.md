@@ -1,6 +1,10 @@
 # QuantumHalfAdder
 Half adder circuit done with qubits and CNOT and Toffoli quantum logic gates. 
-Necessary to pip install qiskit and qiskit_aer. Recommend using a virtual environment
+
+`pip install qiskit`
+`pip install qiskit_aer`
+
+Recommend using a virtual environment
 
 ## General Half Adder
 
