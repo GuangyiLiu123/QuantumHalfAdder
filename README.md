@@ -1,5 +1,5 @@
 # QuantumHalfAdder
-Half adder circuit done with qubits and CNOT and Toffoli quantum logic gates. Built as a hands-on project following a deep dive into quantum fundamentals through Susskind’s Quantum Mechanics: The Theoretical Minimu
+Half adder circuit done with qubits and CNOT and Toffoli quantum logic gates. Built as a hands-on project following a deep dive into quantum fundamentals through Susskind’s Quantum Mechanics: The Theoretical Minimum
 
 The following dependencies are required:
 
